@@ -1,0 +1,97 @@
+name: Technical or scientific problem
+about: Capture a public-safe problem for investigation and durable documentation
+title: "[TRIAGE] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit only neutral technical or scientific information that is safe for unrestricted public disclosure. Remove personal, employer-confidential, financial, health, legal, security-sensitive, and identifying details.
+
+  - type: checkboxes
+    id: public-safety
+    attributes:
+      label: Public-safety confirmation
+      options:
+        - label: I removed identifying and confidential information.
+          required: true
+        - label: The source material is authorized for public disclosure.
+          required: true
+        - label: This issue contains no credentials, access codes, private keys, tokens, or exploitable security details.
+          required: true
+
+  - type: input
+    id: systems
+    attributes:
+      label: Affected systems
+      description: Products, components, protocols, or software involved.
+      placeholder: Steam Deck OLED; SteamOS; Bluetooth; Sonos Move 2
+    validations:
+      required: true
+
+  - type: dropdown
+    id: record-type
+    attributes:
+      label: Record type
+      options:
+        - Incident
+        - Compatibility
+        - Configuration
+        - Integration
+        - Experiment
+        - Design decision
+        - Recurring problem
+        - Unresolved question
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: State the problem and why it matters in two or three sentences.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and symptoms
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Relevant hardware, OS, software, firmware, protocol, versions, and sanitized configuration.
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Observations, measurements, logs, error messages, public references, and reproducible results. Redact identifiers.
+
+  - type: textarea
+    id: attempted
+    attributes:
+      label: Troubleshooting already performed
+      description: Include each action and its result so failed paths are not repeated.
+
+  - type: textarea
+    id: tags
+    attributes:
+      label: Suggested tags and search terms
+      description: Include domains, symptoms, protocols, components, aliases, abbreviations, and exact error phrases.
+
+  - type: textarea
+    id: next
+    attributes:
+      label: Current hypothesis or next test
